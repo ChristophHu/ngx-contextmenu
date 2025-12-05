@@ -1,0 +1,93 @@
+@use './font.sass'
+
+:root
+    --height-md: 3rem
+
+@theme
+    // radius
+    --radius-xs: 0.125rem
+    --radius-sm: 0.25rem
+    --radius-md: 0.375rem
+    --radius-lg: 0.5rem
+    --radius-xl: 0.75rem
+    --radius-2xl: 1rem
+    --radius-3xl: 1.5rem
+    --radius-4xl: 2rem
+
+    // shadow
+    --shadow-2xs: 0 1px rgb(0 0 0 / 0.05)
+    --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05)
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)
+    --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25)
+
+    --inset-shadow-2xs: inset 0 1px rgb(0 0 0 / 0.05)
+    --inset-shadow-xs: inset 0 1px 1px rgb(0 0 0 / 0.05)
+    --inset-shadow-sm: inset 0 2px 4px rgb(0 0 0 / 0.05)
+    
+    --drop-shadow-xs: 0 1px 1px rgb(0 0 0 / 0.05)
+    --drop-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.15)
+    --drop-shadow-md: 0 3px 3px rgb(0 0 0 / 0.12)
+    --drop-shadow-lg: 0 4px 4px rgb(0 0 0 / 0.15)
+    --drop-shadow-xl: 0 9px 7px rgb(0 0 0 / 0.1)
+    --drop-shadow-2xl: 0 25px 25px rgb(0 0 0 / 0.15)
+
+    // blur
+    --blur-xs: 4px
+    --blur-sm: 8px
+    --blur-md: 12px
+    --blur-lg: 16px
+    --blur-xl: 24px
+    --blur-2xl: 40px
+    --blur-3xl: 64px
+
+    // perspective
+    --perspective-dramatic: 100px
+    --perspective-near: 300px
+    --perspective-normal: 500px
+    --perspective-midrange: 800px
+    --perspective-distant: 1200px
+
+    // aspect ratio
+    --aspect-video: 16 / 9
+
+    // ease
+    --ease-in: cubic-bezier(0.4, 0, 1, 1)
+    --ease-out: cubic-bezier(0, 0, 0.2, 1)
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1)
+    --animate-spin: spin 1s linear infinite
+    --animate-ping: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite
+    --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite
+    --animate-bounce: bounce 1s infinite
+
+    @keyframes spin
+        to
+            transform: rotate(360deg)
+
+    @keyframes ping
+        75%,
+        100%
+            transform: scale(2)
+            opacity: 0
+
+    @keyframes pulse
+        50%
+            opacity: 0.5
+
+    @keyframes bounce
+        0%,
+        100%
+            transform: translateY(-25%)
+            animation-timing-function: cubic-bezier(0.8, 0, 1, 1)
+        50%
+            transform: none
+            animation-timing-function: cubic-bezier(0, 0, 0.2, 1)
+
+@layer base
+    h1
+        font-size: var(--text-2xl)
+
+    h2
+        font-size: var(--text-xl)
