@@ -1,0 +1,37 @@
+<ul class="menu w-48" id="id" #ctxMenu hidden>
+  <ng-container *ngFor="let item of items">
+    <hr *ngIf="item.devider" class="h-px bg-borderline border-none" />
+    <li class="item relative m-1 rounded" [id]="item.id" [ngClass]="item.disabled ? 'hover:bg-borderline text-static_gray pointer-events-none' : 'hover:bg-accent'">
+      <button class="flex flex-row items-center"  (click)="runaction(item)">
+        <div class="h-5 w-5">
+          <icons class="w-8 h-8 stroke-1 stroke-current" name="{{ item.icon }}"></icons>
+        </div>
+        <span class="ml-2">{{ item.label }}</span>
+        <span class="grow"></span>
+        @if (item.items) {
+          <div class="h-4 w-4 stroke-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
+          </div>
+        }
+        @else {
+          <span class="absolute right-2 text-disabled text-xs flex-1">{{ item.shortcut | shortcutToString }}</span>
+        }
+        <ng-container *ngIf="item.items">
+          <ul class="menu sublet w-48" hidden>
+            <li class="item relative m-1 rounded" *ngFor="let subitem of item.items" [ngClass]="item.disabled ? 'hover:bg-borderline text-static_gray pointer-events-none' : 'hover:bg-accent'">
+              <div class="flex flex-row items-center">
+                <div class="h-5 w-5">
+                  <icons class="w-8 h-8 stroke-1 stroke-current" name="{{ subitem.icon }}"></icons>
+                </div>
+                <span class="ml-2">{{ subitem.label }}</span>
+                <span class="grow"></span>
+                <span class="absolute right-2 text-disabled text-xs flex-1">{{ subitem.shortcut | shortcutToString }}</span>
+              </div>
+            </li>
+          </ul>
+        </ng-container>
+      </button>
+    </li>
+  </ng-container>
+</ul>
+<span class="sr-only" *ngIf="shortcuts$ | async as shortcut">{{ shortcut }}</span>
