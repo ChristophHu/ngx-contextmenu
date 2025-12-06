@@ -1,12 +1,35 @@
 {
-  "name": "ngx-contextmenu",
-  "version": "0.0.1",
+  "name": "@christophhu/ngx-contextmenu",
+  "version": "20.3.0",
+  "description": "Library for Angular to create custom context menus with keyboard shortcut support.",
+  "license": "MIT",
+  "author": {
+    "name": "Christoph Huschenhoefer",
+    "email": "christoph@nxt.codes"
+  },
+  "keywords": [
+    "angular",
+    "contextmenu",
+    "menu",
+    "shortcuts"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christophhu/ngx-contextmenu.git"
+  },
+  "bugs": {
+    "url": "https://github.com/christophhu/ngx-contextmenu/issues"
+  },
+  "homepage": "https://github.com/christophhu/ngx-contextmenu#readme",
   "peerDependencies": {
     "@angular/common": "^20.3.0",
     "@angular/core": "^20.3.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
-  },
-  "sideEffects": false
+  }
 }

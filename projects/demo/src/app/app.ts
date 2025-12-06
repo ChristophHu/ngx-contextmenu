@@ -1,12 +1,14 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, signal } from '@angular/core'
+import { NgxContextmenu } from '../../../ngx-contextmenu/src/public-api'
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [
+    NgxContextmenu
+  ],
   templateUrl: './app.html',
   styleUrl: './app.sass'
 })
 export class App {
-  protected readonly title = signal('demo');
+  
 }
