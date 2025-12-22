@@ -3,6 +3,9 @@
  */
 
 // components
-export * from './lib/ngx-dynamic-contextmenu.component';
+export * from './lib/ngx-contextmenu.component';
 
-// services
+// models
+export * from './lib/models/context-item.model';
+export * from './lib/models/context-default-actions.model';
+export * from './lib/models/item-class.model';

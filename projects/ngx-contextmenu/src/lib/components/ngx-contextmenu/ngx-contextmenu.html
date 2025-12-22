@@ -1,1 +1,45 @@
-<p>ngx-contextmenu works!</p>
+<ul class="menu w-48" id="id" #ctxMenu hidden>
+    @for (item of items; track $index) {
+        @if (item.devider) {
+            <hr class="h-px bg-borderline border-none" />
+        }
+        <li class="item relative m-1 rounded" [id]="item.id" [ngClass]="item.disabled ? 'hover:bg-borderline text-static_gray pointer-events-none' : 'hover:bg-accent'">
+            <button class="flex flex-row items-center"  (click)="runaction(item)">
+                <div class="h-5 w-5">
+                    <ngx-icons class="w-8 h-8 stroke-1 stroke-current" name="{{ item.icon }}"></ngx-icons>
+                </div>
+                <span class="ml-2">{{ item.label }}</span>
+                <span class="grow"></span>
+                @if (item.items) {
+                    <div class="h-4 w-4 stroke-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none"><path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" /></svg>
+                    </div>
+                }
+                @else {
+                    <!-- <span class="absolute right-2 text-disabled text-xs flex-1">{{ item.shortcut | shortcutToString }}</span> -->
+                }
+                @if (item.items) {
+                    <ul class="menu sublet w-48" hidden>
+                        @for (subitem of item.items; track $index) {
+                            <li class="item relative m-1 rounded" [ngClass]="item.disabled ? 'hover:bg-borderline text-static_gray pointer-events-none' : 'hover:bg-accent'">
+                                <div class="flex flex-row items-center">
+                                    <div class="h-5 w-5">
+                                        <ngx-icons class="w-8 h-8 stroke-1 stroke-current" name="{{ subitem.icon }}"></ngx-icons>
+                                    </div>
+                                    <span class="ml-2">{{ subitem.label }}</span>
+                                    <span class="grow"></span>
+                                    <!-- <span class="absolute right-2 text-disabled text-xs flex-1">{{ subitem.shortcut | shortcutToString }}</span> -->
+                                </div>
+                            </li>
+                        }
+
+                    </ul>
+                }
+            </button>
+        </li>
+    }
+  
+</ul>
+@if ((shortcuts$ | async); as shortcut) {
+    <span class="sr-only">{{ shortcut }}</span>
+}

@@ -1,4 +1,4 @@
-import { KeyCode } from "../helpers/keycodes"
+// import { KeyCode } from "../helpers/keycodes"
 import { ContextDefaultActions } from "./context-default-actions.model"
 import { ContextItemClassEnum } from "./item-class.model"
 
@@ -37,5 +37,5 @@ export interface ContextItem {
     /** The optional items are generation an new submenu. */
     items?: ContextItem[]
     /** The optional shortcuts show the keys to be pressed. */
-    shortcut?: KeyCode[]
+    shortcut?: unknown //KeyCode[]
 }

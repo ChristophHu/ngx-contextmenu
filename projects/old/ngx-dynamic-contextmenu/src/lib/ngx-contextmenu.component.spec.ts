@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgxDynamicContextmenuComponent } from './ngx-dynamic-contextmenu.component';
+import { NgxDynamicContextmenuComponent } from './ngx-contextmenu.component';
 
 describe('NgxDynamicContextmenuComponent', () => {
   let component: NgxDynamicContextmenuComponent;

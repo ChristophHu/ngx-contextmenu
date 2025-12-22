@@ -3,7 +3,7 @@ import { AfterViewInit, Component, EventEmitter, HostListener, Input, Output, Vi
 import { ContextItem } from './models/context-item.model';
 import { NgxIconsComponent } from '@christophhu/ngx-icons';
 import { sequence, shortcut } from './helpers/shortcut';
-import { Observable, map, merge, tap } from 'rxjs';
+import { Observable } from 'rxjs';
 import { ContextDefaultActions } from './models/context-default-actions.model';
 import { ShortcutToStringPipe } from "./pipes/shortcut-to-string.pipe";
 
@@ -12,17 +12,17 @@ import { ShortcutToStringPipe } from "./pipes/shortcut-to-string.pipe";
 // }
 
 @Component({
-  selector: 'ngx-dynamic-contextmenu',
+  selector: 'ngx-contextmenu',
   standalone: true,
   imports: [
     CommonModule,
     NgxIconsComponent,
     ShortcutToStringPipe
 ],
-  templateUrl: './ngx-dynamic-contextmenu.component.html',
-  styleUrls: ['./ngx-dynamic-contextmenu.component.sass']
+  templateUrl: './ngx-contextmenu.component.html',
+  styleUrls: ['./ngx-contextmenu.component.sass']
 })
-export class NgxDynamicContextmenuComponent implements AfterViewInit {
+export class NgxContextmenuComponent implements AfterViewInit {
   @ViewChild('ctxMenu') ctxMenu: any
   @Input() items: ContextItem[] = []
   @Input() element: any | undefined

@@ -1,12 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { NgxDynamicContextmenuComponent } from '../../../ngx-dynamic-contextmenu/src/public-api';
-import { ContextItem } from '../../../ngx-dynamic-contextmenu/src/lib/models/context-item.model';
-import { ContextItemClassEnum } from '../../../ngx-dynamic-contextmenu/src/lib/models/item-class.model';
-import { ContextDefaultActions } from '../../../ngx-dynamic-contextmenu/src/lib/models/context-default-actions.model';
+import { Component } from '@angular/core';
+import { NgxContextmenuComponent, ContextItem, ContextItemClassEnum, ContextDefaultActions } from '../../../ngx-dynamic-contextmenu/src/public-api';
 import { KeyCode } from '../../../ngx-dynamic-contextmenu/src/lib/helpers/keycodes';
-import { sequence, shortcut } from '../../../ngx-dynamic-contextmenu/src/lib/helpers/shortcut';
-import { Observable, map, merge, tap } from 'rxjs';
 import { CommonModule } from '@angular/common';
 
 interface ContextActionReturn {
@@ -25,14 +19,13 @@ enum ContextActionEnum {
   standalone: true,
   imports: [
     CommonModule,
-    NgxDynamicContextmenuComponent,
-    RouterOutlet
+    NgxContextmenuComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass'
 })
 export class AppComponent { 
-  items: ContextItem[] = [
+  public items: ContextItem[] = [
     { id: '1', label: 'Back', icon: 'dot', shortcut: [KeyCode.ShiftLeft, KeyCode.KeyL], disabled: true, action: ContextActionEnum.DELETE },
     { id: '2', label: 'Forward', icon: 'dots', shortcut: [KeyCode.ShiftLeft, KeyCode.KeyO], action: ContextActionEnum.EDIT },
     { id: '3', label: 'Teilen', devider: true, items: [

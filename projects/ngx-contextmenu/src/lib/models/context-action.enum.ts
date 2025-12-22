@@ -1,4 +1,4 @@
-enum ContextActionEnum {
+export enum ContextActionEnum {
   DELETE = 'delete',
   EDIT = 'edit',
   SHOW = 'show',
