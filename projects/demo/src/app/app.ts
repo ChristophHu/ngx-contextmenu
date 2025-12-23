@@ -13,7 +13,7 @@ export class App {
   public items: ContextItem[] = [
     { id: '1', label: 'Back', icon: 'dot', shortcut: ["Shift", "L"], disabled: true, action: ContextActionEnum.DELETE },
     { id: '2', label: 'Forward', icon: 'dots', shortcut: ["Shift", "O"], action: ContextActionEnum.EDIT },
-    { id: '3', label: 'Teilen', devider: true, items: [
+    { id: '3', label: 'Teilen', divider: true, items: [
       { id: '31', label: 'Facebook', icon: 'brand-facebook', shortcut: ["Shift", "D"], action: ContextActionEnum.EDIT },
       { id: '32', label: 'Instagram', icon: 'brand-instagram', shortcut: ["Shift", "I"], action: ContextActionEnum.EDIT }
     ]},

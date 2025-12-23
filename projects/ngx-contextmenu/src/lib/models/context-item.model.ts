@@ -10,7 +10,7 @@ import { ContextItemClassEnum } from "./item-class.model"
  * @param {string} label is used for whatever reason
  * @param {any} action is used for whatever reason
  * @param {ContextItemClassEnum} [class] is used for whatever reason
- * @param {boolean} [devider] is used for whatever reason
+ * @param {boolean} [divider] is used for whatever reason
  * @param {boolean} [disabled] is used for whatever reason
  * @param {boolean} [hidden] is used for whatever reason
  * @param {string} [icon] is used for whatever reason
@@ -26,8 +26,8 @@ export interface ContextItem {
     action?: ContextDefaultActions | any
     /** The optional class is used to style the context-menu-item. */
     class?: ContextItemClassEnum
-    /** The optional devider devides the context-menu-item to the item above. */
-    devider?: boolean
+    /** The optional divider divides the context-menu-item to the item above. */
+    divider?: boolean
     /** Disabled items can't be clicked. */
     disabled?: boolean
     /** Hidden items are invisible. */

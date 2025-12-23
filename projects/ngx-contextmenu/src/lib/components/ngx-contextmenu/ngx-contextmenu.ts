@@ -98,7 +98,6 @@ export class NgxContextmenu {
       var sijY = event.clientY
       if (event.clientY + this.ctxMenu.nativeElement.offsetHeight > this.innerHeight) sijY -= this.ctxMenu.nativeElement.offsetHeight;
       if (sijX + this.ctxMenu.nativeElement.offsetWidth > this.innerWidth) sijX -= this.ctxMenu.nativeElement.offsetWidth;
-      console.log(sijX, sijY);
       this.ctxMenu.nativeElement.style.left = Math.max(sijX, 0) + 'px'
       this.ctxMenu.nativeElement.style.top = Math.max(sijY, 0) + 'px'
       this.action.emit({ id: this.element?.id, action: ContextDefaultActions.OPEN })

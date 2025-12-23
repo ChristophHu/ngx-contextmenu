@@ -7,10 +7,11 @@
     border-radius: 0.25rem
     box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15)
     list-style: none
+    user-select: none
     z-index: 999
 
 .menu[hidden]
-    display: block
+    display: none
     visibility: hidden
     opacity: 0
 
@@ -23,9 +24,15 @@
 
 .sublet 
     // @apply top-[-0.4rem] left-full transform translate-x-[-0.7em] ease-in-out duration-200 overflow-hidden
+    display: none
+    left: 100%
+    top: -0.4Rem
+    transform: translateX(-0.7em)
+    transition: transform 0.2s ease-in-out
+    overflow: hidden
     min-width: 10em
 
-// .sublet .item 
+.sublet .item 
     // padding-left: 2em
 
 // .sublet i[class*="fa-"] 
@@ -67,9 +74,12 @@
     // @apply bg-secondary cursor-not-allowed
 
 .item:not(.item--disabled):hover .sublet
+    display: block
     opacity: 1
     visibility: visible
     border-radius: 0.25rem
+    -webkit-transform: translateX(0)
+    transform: translateX(0)
     // @apply visible rounded opacity-100 translate-x-0
 
 .item:last-child

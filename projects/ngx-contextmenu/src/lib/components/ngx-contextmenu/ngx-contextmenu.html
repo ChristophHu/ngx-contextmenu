@@ -1,6 +1,6 @@
 <ul class="menu w-48" id="id" #ctxMenu hidden>
     @for (item of items; track $index) {
-        @if (item.devider) {
+        @if (item.divider) {
             <hr class="h-px bg-borderline border-none" />
         }
         <li class="item relative m-1 rounded" [id]="item.id" [ngClass]="item.disabled ? 'hover:bg-borderline text-static_gray pointer-events-none' : 'hover:bg-accent'">
@@ -19,7 +19,7 @@
                     <!-- <span class="absolute right-2 text-disabled text-xs flex-1">{{ item.shortcut | shortcutToString }}</span> -->
                 }
                 @if (item.items) {
-                    <ul class="menu sublet w-48" hidden>
+                    <ul class="menu sublet">
                         @for (subitem of item.items; track $index) {
                             <li class="item relative m-1 rounded" [ngClass]="item.disabled ? 'hover:bg-borderline text-static_gray pointer-events-none' : 'hover:bg-accent'">
                                 <div class="flex flex-row items-center">
