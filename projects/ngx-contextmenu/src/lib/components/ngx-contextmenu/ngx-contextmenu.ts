@@ -13,6 +13,7 @@ import { AsyncPipe, NgClass } from '@angular/common';
     AsyncPipe,
     NgClass,
     NgxIconsComponent,
+    NgxShortcut
     // ShortcutToStringPipe
   ],
   templateUrl: './ngx-contextmenu.html',

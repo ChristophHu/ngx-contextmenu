@@ -1,10 +1,10 @@
-<ul class="menu w-48" id="id" #ctxMenu hidden>
+<ul class="menu" id="id" #ctxMenu hidden>
     @for (item of items; track $index) {
         @if (item.divider) {
             <hr class="h-px bg-borderline border-none" />
         }
-        <li class="item relative m-1 rounded" [id]="item.id" [ngClass]="item.disabled ? 'hover:bg-borderline text-static_gray pointer-events-none' : 'hover:bg-accent'">
-            <button class="flex flex-row items-center"  (click)="runaction(item)">
+        <li class="item" [id]="item.id" [ngClass]="item.disabled ? 'disabled' : ''">
+            <button class="flex flex-row w-full items-center" (click)="runaction(item)">
                 <div class="h-5 w-5">
                     <ngx-icons class="w-8 h-8 stroke-1 stroke-current" name="{{ item.icon }}"></ngx-icons>
                 </div>
@@ -16,12 +16,13 @@
                     </div>
                 }
                 @else {
+                    <ngx-shortcut [keys]="['Shift', 'A']" [cb]=""></ngx-shortcut>
                     <!-- <span class="absolute right-2 text-disabled text-xs flex-1">{{ item.shortcut | shortcutToString }}</span> -->
                 }
                 @if (item.items) {
                     <ul class="menu sublet">
                         @for (subitem of item.items; track $index) {
-                            <li class="item relative m-1 rounded" [ngClass]="item.disabled ? 'hover:bg-borderline text-static_gray pointer-events-none' : 'hover:bg-accent'">
+                            <li class="item" [ngClass]="subitem.disabled ? 'disabled' : ''">
                                 <div class="flex flex-row items-center">
                                     <div class="h-5 w-5">
                                         <ngx-icons class="w-8 h-8 stroke-1 stroke-current" name="{{ subitem.icon }}"></ngx-icons>
