@@ -8,7 +8,7 @@
                 <div class="h-5 w-5">
                     <ngx-icons class="w-8 h-8 stroke-1 stroke-current" name="{{ item.icon }}"></ngx-icons>
                 </div>
-                <span class="ml-2">{{ item.label }}</span>
+                <span class="mx-2">{{ item.label }}</span>
                 <span class="grow"></span>
                 @if (item.items) {
                     <div class="h-4 w-4 stroke-2">
@@ -16,20 +16,23 @@
                     </div>
                 }
                 @else {
-                    <ngx-shortcut [keys]="['Shift', 'A']" [cb]=""></ngx-shortcut>
-                    <!-- <span class="absolute right-2 text-disabled text-xs flex-1">{{ item.shortcut | shortcutToString }}</span> -->
+                    @if (item.shortcut) {
+                        <ngx-shortcut [keys]="item.shortcut"></ngx-shortcut>
+                    }
                 }
                 @if (item.items) {
                     <ul class="menu sublet">
                         @for (subitem of item.items; track $index) {
                             <li class="item" [ngClass]="subitem.disabled ? 'disabled' : ''">
-                                <div class="flex flex-row items-center">
+                                <div class="flex flex-row w-full items-center">
                                     <div class="h-5 w-5">
                                         <ngx-icons class="w-8 h-8 stroke-1 stroke-current" name="{{ subitem.icon }}"></ngx-icons>
                                     </div>
-                                    <span class="ml-2">{{ subitem.label }}</span>
+                                    <span class="mx-2">{{ subitem.label }}</span>
                                     <span class="grow"></span>
-                                    <!-- <span class="absolute right-2 text-disabled text-xs flex-1">{{ subitem.shortcut | shortcutToString }}</span> -->
+                                    @if (subitem.shortcut) {
+                                        <ngx-shortcut [keys]="subitem.shortcut"></ngx-shortcut>
+                                    }
                                 </div>
                             </li>
                         }
@@ -39,7 +42,7 @@
             </button>
         </li>
     }
-  
+    
 </ul>
 @if ((shortcuts$ | async); as shortcut) {
     <span class="sr-only">{{ shortcut }}</span>

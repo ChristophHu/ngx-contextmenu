@@ -37,5 +37,5 @@ export interface ContextItem {
     /** The optional items are generation an new submenu. */
     items?: ContextItem[]
     /** The optional shortcuts show the keys to be pressed. */
-    shortcut?: unknown //KeyCode[]
+    shortcut?: string[] //KeyCode[]
 }

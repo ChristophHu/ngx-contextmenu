@@ -47,7 +47,7 @@ export class NgxContextmenu {
   }
 
   ngAfterViewInit(): void {
-    this.ngxShortcutService.addShortcut({ keys: ["Shift", "a", "b"], cb: () => { console.log("Shortcut Shift + A + B triggered!")} });
+    this.ngxShortcutService.addShortcut({ keys: ["Shift", "a"], cb: () => { console.log("Shortcut Shift + A + B triggered!")} });
     // let sc: any[] = []
     // let sc: { id: string, shortcut: any, action: any }[] = []
     // this.items.forEach(item => {
