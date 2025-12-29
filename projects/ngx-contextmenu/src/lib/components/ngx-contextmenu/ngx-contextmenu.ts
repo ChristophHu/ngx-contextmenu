@@ -5,7 +5,6 @@ import { ContextDefaultActions } from '../../models/context-default-actions.mode
 import { NgxShortcut, NgxShortcutService } from '@christophhu/ngx-shortcut';
 import { NgxIconsComponent } from '@christophhu/ngx-icons'
 import { AsyncPipe, NgClass } from '@angular/common';
-// import { ShortcutToStringPipe } from '../../pipes/shortcut-to-string.pipe';
 
 @Component({
   selector: 'ngx-contextmenu',
@@ -14,7 +13,6 @@ import { AsyncPipe, NgClass } from '@angular/common';
     NgClass,
     NgxIconsComponent,
     NgxShortcut
-    // ShortcutToStringPipe
   ],
   templateUrl: './ngx-contextmenu.html',
   styleUrl: './ngx-contextmenu.sass',
@@ -59,40 +57,6 @@ export class NgxContextmenu {
         })
       }
     })
-
-    // this.ngxShortcutService.addShortcut({ keys: ["Shift", "a"], cb: () => { console.log("Shortcut Shift + A + B triggered!")} });
-
-    // let sc: any[] = []
-    // let sc: { id: string, shortcut: any, action: any }[] = []
-    // this.items.forEach(item => {
-    //   // add class to element
-    //   if (item.class) {
-    //     let el = document.getElementById(item.id)
-    //     if (el) {
-    //       el.classList.add(item.class)
-    //     }
-    //   }
-    //   // add shortcuts
-    //   if (item.shortcut) {
-    //     sc.push({ action: item.action, id: item.id, shortcut: shortcut(item.shortcut).pipe(
-    //       sequence()
-    //     )})
-    //   }
-    //   // add subitem shortcuts
-    //   if (item.items) {
-    //     item.items.forEach(subitem => {
-    //       if (subitem.shortcut) {
-    //         sc.push({ action: subitem.action, id: subitem.id, shortcut: shortcut(subitem.shortcut).pipe(
-    //           sequence()
-    //         )})
-    //       }
-    //     })
-    //   }
-    // })
-
-    // sc.map((s) => s.shortcut.subscribe((x: any) => {
-    //   this.runaction({ id: s.id, action: s.action })
-    // }))
   }
 
   onResize(event: any) {

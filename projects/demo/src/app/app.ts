@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core'
+import { Component } from '@angular/core'
 import { ContextItem, NgxContextmenu, ContextActionReturn, ContextActionEnum, ContextItemClassEnum, ContextDefaultActions } from '../../../ngx-contextmenu/src/public-api'
 
 @Component({
@@ -23,7 +23,7 @@ export class App {
   returnContextAction(event: ContextActionReturn) {
     switch (event.action) {
       case ContextDefaultActions.OPEN.toString():
-        console.log('is open', event.id)
+        // console.log('is open', event.id)
         break
       case ContextActionEnum.DELETE:
         console.log('delete row', event.id)
