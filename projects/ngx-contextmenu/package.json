@@ -1,6 +1,6 @@
 {
   "name": "@christophhu/ngx-contextmenu",
-  "version": "20.3.0",
+  "version": "20.3.1",
   "description": "Library for Angular to create custom context menus with keyboard shortcut support.",
   "license": "MIT",
   "author": {

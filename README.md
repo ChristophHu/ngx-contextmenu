@@ -74,6 +74,19 @@ Then, you can use the `<ngx-contextmenu>` component in your HTML templates as sh
 <ngx-contextmenu [items]="items" (action)="returnContextAction($event)" [element]="{ id: '1234', code: 'test'}"></ngx-contextmenu>
 ```
 
+## Styles
+You can customize the styles of the context menu by overriding the default CSS classes. Here’s an example of how to change the background color and text color of the context menu:
+
+```css
+ngx-shortcut 
+    .shortcut
+        gap: 0px
+        justify-content: flex-end
+
+        .shortcut-text
+            @apply bg-transparent text-borderline h-full p-0 min-w-full
+```
+
 ## License
 This project is licensed under the MIT License.
 
